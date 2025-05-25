@@ -111,7 +111,7 @@ fun VerificationFourScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(24.dp))
 
         // Continue Button
-        ContinueButton()
+        ContinueButton(navController)
     }
 }
 
@@ -171,9 +171,9 @@ fun GenderOption(label: String, iconRes: Int, selected: Boolean, onClick: () -> 
 
 // Continue Button Component
 @Composable
-fun ContinueButton() {
+fun ContinueButton(navController: NavController) {
     Button(
-        onClick = {  },
+        onClick = {navController.navigate(Routes.D1Screen)},
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 24.dp)

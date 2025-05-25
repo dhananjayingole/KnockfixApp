@@ -115,7 +115,7 @@ fun VerificationThreeScreen(navController: NavController) {
                 .height(50.dp),
             shape = RoundedCornerShape(8.dp),
             colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (code.isNotEmpty()) Color(0xFFE1BEE7) else Color(0xFFF1F1F1),
+                backgroundColor = if (code.isNotEmpty()) Color(0xFF7373EF) else Color(0xFFF1F1F1),
                 contentColor = if (code.isNotEmpty()) Color.Black else Color.Gray
             )
         ) {

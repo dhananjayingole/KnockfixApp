@@ -50,8 +50,11 @@ android {
 }
 
 dependencies {
+    //payment gateway
+    implementation("com.razorpay:checkout:1.6.33")
 
     //navigation
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
     implementation("androidx.navigation:navigation-compose:2.9.0")
     implementation("androidx.core:core-ktx:1.16.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.0")
@@ -65,6 +68,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-pager-indicators:0.28.0")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.wear.compose:compose-material:1.4.1")
+    implementation("com.google.android.datatransport:transport-runtime:4.0.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")

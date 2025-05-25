@@ -1,6 +1,5 @@
 package eu.tutorials.knofixapp.Verification
 
-
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

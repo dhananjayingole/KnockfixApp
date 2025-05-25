@@ -77,7 +77,7 @@ fun VerificationOneScreen(navController: NavController) {
                         modifier = Modifier
                             .size(80.dp)
                             .clip(CircleShape)
-                            .background(Color(0xFF7373EF)),
+                            .background(Color(0xFFE1BEE7)),
                         contentAlignment = Alignment.Center
                     ) {
                         Image(

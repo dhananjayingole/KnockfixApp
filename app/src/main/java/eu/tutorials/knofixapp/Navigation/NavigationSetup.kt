@@ -2,10 +2,18 @@ package eu.tutorials.knofixapp.Navigation
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import eu.tutorials.knofixapp.D1.D1Screen
+import eu.tutorials.knofixapp.D1.D2Screen
+import eu.tutorials.knofixapp.D1.D3Screen
+import eu.tutorials.knofixapp.D1.D4Screen
+import eu.tutorials.knofixapp.Navigation.Routes.D2Screen
 import eu.tutorials.knofixapp.Verification.VerificationFourScreen
 import eu.tutorials.knofixapp.Verification.VerificationOneScreen
 import eu.tutorials.knofixapp.Verification.VerificationThreeScreen
@@ -16,6 +24,16 @@ import eu.tutorials.knofixapp.Welcome.UI.SplashScreen
 
 @Composable
 fun NavigationSetup(navController: NavHostController){
+
+    val systemUiController = rememberSystemUiController()
+
+    SideEffect {
+        systemUiController.setSystemBarsColor(
+            color = Color.Transparent,
+            darkIcons = false // Force light icons for better visibility
+        )
+    }
+
     NavHost(
         navController = navController,
         startDestination = Routes.SplashScreen,
@@ -47,6 +65,18 @@ fun NavigationSetup(navController: NavHostController){
 
         composable(Routes.VerificationFourScreen){
             VerificationFourScreen(navController)
+        }
+        composable(Routes.D1Screen) {
+            D1Screen(navController)
+        }
+        composable(Routes.D2Screen) {
+            D2Screen(navController)
+        }
+        composable(Routes.D3Screen) {
+            D3Screen(navController)
+        }
+        composable(Routes.D4Screen) {
+            D4Screen(navController)
         }
     }
 }

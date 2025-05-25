@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.KnofixApp" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- res/values/themes.xml -->
+    <style name="Theme.KnofixApp" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item> <!-- For white icons -->
+    </style>
 </resources>
