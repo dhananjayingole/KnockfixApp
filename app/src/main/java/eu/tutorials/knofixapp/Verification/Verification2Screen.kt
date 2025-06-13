@@ -42,6 +42,7 @@ import eu.tutorials.knofixapp.R
 @Composable
 fun VerificationTwoScreen(navController: NavController) {
     val phoneNumberState = remember { mutableStateOf(TextFieldValue()) }
+
     Column(
         modifier = Modifier
             .fillMaxSize()

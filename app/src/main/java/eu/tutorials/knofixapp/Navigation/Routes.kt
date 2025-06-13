@@ -12,5 +12,9 @@ object Routes {
     var D2Screen = "d2screen"
     var D3Screen = "d3screen"
     var D4Screen = "d4screen"
+    var PaymentScreen = "paymentscreen"
+    var PaymentInformationScreen = "paymentinfoscreen"
+
+    var LocationSearchScreen = "locationsearchscreen"
 
 }

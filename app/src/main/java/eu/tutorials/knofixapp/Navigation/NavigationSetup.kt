@@ -1,5 +1,7 @@
 package eu.tutorials.knofixapp.Navigation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
@@ -13,7 +15,9 @@ import eu.tutorials.knofixapp.D1.D1Screen
 import eu.tutorials.knofixapp.D1.D2Screen
 import eu.tutorials.knofixapp.D1.D3Screen
 import eu.tutorials.knofixapp.D1.D4Screen
+import eu.tutorials.knofixapp.Location.LocationSearchScreen
 import eu.tutorials.knofixapp.Navigation.Routes.D2Screen
+import eu.tutorials.knofixapp.Payment.PaymentInformationScreen
 import eu.tutorials.knofixapp.Verification.VerificationFourScreen
 import eu.tutorials.knofixapp.Verification.VerificationOneScreen
 import eu.tutorials.knofixapp.Verification.VerificationThreeScreen
@@ -22,6 +26,7 @@ import eu.tutorials.knofixapp.Welcome.UI.FirstLogScreen
 import eu.tutorials.knofixapp.Welcome.UI.SecondLogScreen
 import eu.tutorials.knofixapp.Welcome.UI.SplashScreen
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun NavigationSetup(navController: NavHostController){
 
@@ -77,6 +82,17 @@ fun NavigationSetup(navController: NavHostController){
         }
         composable(Routes.D4Screen) {
             D4Screen(navController)
+        }
+        composable (Routes.PaymentInformationScreen){
+            PaymentInformationScreen(navController)
+        }
+        composable(Routes.LocationSearchScreen) {
+            LocationSearchScreen(
+                navController = navController,
+                country = "India",
+                state = "Maharashtra",
+                city = "Nanded"
+            )
         }
     }
 }

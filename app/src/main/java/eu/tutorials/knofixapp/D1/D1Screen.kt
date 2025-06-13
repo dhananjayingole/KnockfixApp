@@ -1,5 +1,6 @@
 package eu.tutorials.knofixapp.D1
 
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
@@ -35,26 +36,23 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.zIndex
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun D1Screen(navController: NavController) {
-
     val systemUiController = rememberSystemUiController()
 
     SideEffect {
         systemUiController.setSystemBarsColor(
             color = Color.Transparent,
-            darkIcons = false // Force light icons for better visibility
+            darkIcons = false
         )
     }
 
@@ -68,7 +66,7 @@ fun D1Screen(navController: NavController) {
                 .fillMaxSize()
                 .background(Color(0xFFEFEFEF))
         ) {
-            // Background Image - Full width including system bars
+            // Gradient-like Background
             Image(
                 painter = painterResource(id = R.drawable.img_19),
                 contentDescription = "Top Background",
@@ -79,7 +77,6 @@ fun D1Screen(navController: NavController) {
                     .align(Alignment.TopStart) // Changed from TopCenter to TopStart
             )
 
-            // Main content column
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -93,15 +90,16 @@ fun D1Screen(navController: NavController) {
                         .padding(top = 16.dp, start = 16.dp, end = 16.dp)
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.img),
+                        painter = painterResource(id = R.drawable.img), // Logo
                         contentDescription = "Logo",
-                        modifier = Modifier.size(80.dp)
+                        modifier = Modifier.size(50.dp)
                     )
                     Text(
                         text = "KonckNFix",
                         fontSize = 18.sp,
                         color = Color.White,
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(start = 8.dp)
                     )
                     Spacer(modifier = Modifier.weight(1f))
                     Icon(
@@ -112,24 +110,40 @@ fun D1Screen(navController: NavController) {
                     )
                 }
 
-                Spacer(modifier = Modifier.height(40.dp))
+                Spacer(modifier = Modifier.height(16.dp))
 
-                // Search Bar and Services
+                // Search Bar and Banner
                 Column(modifier = Modifier.padding(horizontal = 16.dp)) {
+                    Spacer(modifier = Modifier.height(24.dp))
                     SearchBar()
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Image(
+                        painter = painterResource(id = R.drawable.img_36),
+                        contentDescription = "Men's Fix Saloon Banner",
+                        contentScale = ContentScale.FillWidth,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(150.dp)
+                            .clip(RoundedCornerShape(8.dp))
+                    )
+
                     Spacer(modifier = Modifier.height(20.dp))
+
                     Text(
                         text = "Services",
                         fontWeight = FontWeight.Bold,
                         fontSize = 20.sp
                     )
+
                     Spacer(modifier = Modifier.height(12.dp))
+
                     ServiceGrid()
                 }
             }
         }
     }
 }
+
 
 @Composable
 fun SearchBar() {
@@ -171,13 +185,13 @@ data class ServiceItem(val name: String, val iconRes: Int)
 val services = listOf(
     ServiceItem("Cleaning", R.drawable.img_18),
     ServiceItem("Plumber", R.drawable.img_20),
-    ServiceItem("Electrical", R.drawable.img_21),
+    ServiceItem("Electrician", R.drawable.img_21),
     ServiceItem("Carpenter", R.drawable.img_22),
     ServiceItem("Appliance\nRepair", R.drawable.img_23),
     ServiceItem("Gas Stove", R.drawable.img_24),
-    ServiceItem("Car\nSaloon", R.drawable.img_25),
-    ServiceItem("Ments", R.drawable.img_26) // Adjust this if needed
+    ServiceItem("Men's\nSaloon", R.drawable.img_26) // Fixed label
 )
+
 @Composable
 fun ServiceGrid() {
     LazyVerticalGrid(
@@ -272,6 +286,6 @@ fun BottomNavigationBar(navController: NavController) {
 
 @Preview(showBackground = true)
 @Composable
-fun BottomNavigationBarPreview() {
+fun BottomNavigationBarOnePreview() {
     D1Screen(navController = rememberNavController())
 }
