@@ -16,8 +16,8 @@ import eu.tutorials.knofixapp.D1.D2Screen
 import eu.tutorials.knofixapp.D1.D3Screen
 import eu.tutorials.knofixapp.D1.D4Screen
 import eu.tutorials.knofixapp.Location.LocationSearchScreen
-import eu.tutorials.knofixapp.Navigation.Routes.D2Screen
 import eu.tutorials.knofixapp.Payment.PaymentInformationScreen
+import eu.tutorials.knofixapp.Payment.PaymentScreen
 import eu.tutorials.knofixapp.Verification.VerificationFourScreen
 import eu.tutorials.knofixapp.Verification.VerificationOneScreen
 import eu.tutorials.knofixapp.Verification.VerificationThreeScreen
@@ -85,6 +85,9 @@ fun NavigationSetup(navController: NavHostController){
         }
         composable (Routes.PaymentInformationScreen){
             PaymentInformationScreen(navController)
+        }
+        composable(Routes.PaymentScreen) {
+            PaymentScreen(navController,null)
         }
         composable(Routes.LocationSearchScreen) {
             LocationSearchScreen(

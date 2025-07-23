@@ -1,4 +1,4 @@
-package eu.tutorials.knofixapp.D1
+package eu.tutorials.knofixapp.Payment
 
 import android.app.Activity
 import android.widget.Toast

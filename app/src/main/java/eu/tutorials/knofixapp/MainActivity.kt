@@ -15,10 +15,9 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
 import eu.tutorials.knofixapp.D1.D1Screen
-import eu.tutorials.knofixapp.D1.PaymentScreen
 import eu.tutorials.knofixapp.Location.LocationSearchScreen
 import eu.tutorials.knofixapp.Navigation.NavigationSetup
-import eu.tutorials.knofixapp.Payment.PaymentInformationScreen
+import eu.tutorials.knofixapp.Payment.PaymentScreen
 import eu.tutorials.knofixapp.ui.theme.KnofixAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -39,9 +38,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     // Create a dummy navController since LocationSearchScreen requires one
                     val navController = rememberNavController()
-                    PaymentInformationScreen(navController)
-
-                }
+                    NavigationSetup(navController) }
             }
         }
     }
